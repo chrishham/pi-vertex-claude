@@ -1,5 +1,5 @@
 import { AnthropicVertex } from "@anthropic-ai/vertex-sdk";
-import { streamAnthropic } from "@earendil-works/pi-ai/anthropic";
+import { streamAnthropic } from "@earendil-works/pi-ai";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 import * as fs from "fs";
 import * as path from "path";
@@ -131,6 +131,7 @@ export default function (pi: ExtensionAPI) {
 
   pi.registerProvider("vertex-claude", {
     baseUrl: `https://${endpoint}`,
+    apiKey: "vertex-adc",
     api: "anthropic-vertex",
 
     oauth: {
