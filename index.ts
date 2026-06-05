@@ -76,7 +76,6 @@ const streamVertexClaude = (model: any, context: any, options?: any) => {
   const budgets: Record<string, number> = { minimal: 1024, low: 2048, medium: 8192, high: 16384, ...options?.thinkingBudgets };
   const level = options.reasoning === "xhigh" ? "high" : options.reasoning;
   let thinkingBudget = budgets[level] || 8192;
-  const baseMax = opts.maxTokens ?? model.maxTokens;
   const maxTokens = opts.maxTokens === undefined
     ? model.maxTokens
     : Math.min(opts.maxTokens + thinkingBudget, model.maxTokens);
